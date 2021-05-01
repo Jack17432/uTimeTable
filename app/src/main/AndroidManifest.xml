@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UTimeTable">
-        <activity android:name=".addAssignment"></activity>
+        <activity android:name=".addHoliday"></activity>
+        <activity android:name=".addAssignment" />
         <activity android:name=".addClass" />
         <activity android:name=".MainActivity">
             <intent-filter>

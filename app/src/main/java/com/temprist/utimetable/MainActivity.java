@@ -97,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, addAssignment.class));
                         return false;
                     }
+                    else if (speedDialActionItem.getId() == R.id.addHolidayFAB) {
+                        startActivity(new Intent(MainActivity.this, addHoliday.class));
+                        return false;
+                    }
                     return false;
                 }
             });
