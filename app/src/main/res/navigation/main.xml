@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/menuTimeTable">
+
+    <fragment
+        android:id="@+id/menuTimeTable"
+        android:name="com.temprist.utimetable.TimeTableFragment"
+        android:label="TimeTable"
+        tools:layout="@layout/fragment_time_table" />
+    <fragment
+        android:id="@+id/menuAssignment"
+        android:name="com.temprist.utimetable.AssignmentFragment"
+        android:label="Assignments"
+        tools:layout="@layout/fragment_assignment" />
+    <fragment
+        android:id="@+id/menuClasses"
+        android:name="com.temprist.utimetable.ClassesFragment"
+        android:label="Classes"
+        tools:layout="@layout/fragment_classes" />
+
+</navigation>

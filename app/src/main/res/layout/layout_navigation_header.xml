@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androud="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EDEDED"
+    android:padding="20dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/headerImageProfile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/avatar_1"
+        androud:layout_constraintStart_toStartOf="parent"
+        androud:layout_constraintTop_toTopOf="parent"
+        androud:riv_oval="true" />
+
+    <View
+        android:id="@+id/headerViewSupporter"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        androud:layout_constraintBottom_toBottomOf="@+id/headerImageProfile"
+        androud:layout_constraintEnd_toEndOf="@+id/headerImageProfile"
+        androud:layout_constraintStart_toStartOf="@id/headerImageProfile"
+        androud:layout_constraintTop_toTopOf="@+id/headerImageProfile" />
+
+    <TextView
+        android:id="@+id/headerUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/userName"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        androud:layout_constraintBottom_toTopOf="@id/headerViewSupporter"
+        androud:layout_constraintStart_toEndOf="@id/headerImageProfile" />
+
+    <TextView
+        android:id="@+id/headerEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/userEmail"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        androud:layout_constraintStart_toEndOf="@id/headerImageProfile"
+        androud:layout_constraintTop_toBottomOf="@id/headerViewSupporter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
