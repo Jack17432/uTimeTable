@@ -40,16 +40,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonAddClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="@string/addClass"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/editTextNameOfClass"
         android:layout_width="0dp"
@@ -65,5 +55,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <EditText
+        android:id="@+id/editTextTeacherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/addTeacherName"
+        app:layout_constraintStart_toStartOf="@+id/editTextNameOfClass"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameOfClass" />
+
+    <EditText
+        android:id="@+id/editTextEmailAddressOfTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/addTeacherEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextTeacherName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTeacherName" />
+
+    <Button
+        android:id="@+id/buttonAddClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/addClass"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

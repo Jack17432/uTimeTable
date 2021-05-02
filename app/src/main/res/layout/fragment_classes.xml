@@ -6,17 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ClassesFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="57dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="425dp"
-        android:layout_marginEnd="191dp"
-        android:layout_marginBottom="425dp"
-        android:text="@string/classes"
+    <ListView
+        android:id="@+id/listViewClasses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

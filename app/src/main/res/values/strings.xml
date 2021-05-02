@@ -16,4 +16,6 @@
     <string name="addHoliday">Add New Holiday</string>
     <string name="classes">Classes</string>
     <string name="inputClass" />
+    <string name="addTeacherName">Name of Teacher</string>
+    <string name="addTeacherEmail">Add Teacher Email</string>
 </resources>

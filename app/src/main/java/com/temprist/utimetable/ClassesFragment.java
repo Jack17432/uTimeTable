@@ -1,23 +1,70 @@
 package com.temprist.utimetable;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.temprist.utimetable.DataBase.CLASS_TABLE;
 
 public class ClassesFragment extends Fragment {
+
+    //References
+    ListView listViewClasses;
+    DataBase dataBase;
+    ArrayAdapter<UserClass> userClassArrayAdapter;
+    View view;
 
     public ClassesFragment() {
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_classes, container, false);
+    public void onResume() {
+        super.onResume();
+        refreshList();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_classes, container, false);
+        listViewClasses = view.findViewById(R.id.listViewClasses);
+        dataBase = new DataBase(getActivity().getApplicationContext());
+
+        refreshList();
+
+        listViewClasses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                UserClass clickedUserClass = (UserClass) parent.getItemAtPosition(position);
+                boolean isClassDeleted = dataBase.deleteUserClass(clickedUserClass);
+
+                refreshList();
+                if (isClassDeleted) Toast.makeText(getActivity().getApplicationContext(), clickedUserClass.getNameOfClass() + " has been deleted." , Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getActivity().getApplicationContext(), "Unable to delete Class." , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
+    }
+
+    public void refreshList() {
+        userClassArrayAdapter = new ArrayAdapter<UserClass>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, dataBase.getAllClasses());
+        listViewClasses.setAdapter(userClassArrayAdapter);
     }
 }
