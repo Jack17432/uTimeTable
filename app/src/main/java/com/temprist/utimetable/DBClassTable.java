@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataBase extends SQLiteOpenHelper {
+public class DBClassTable extends SQLiteOpenHelper {
 
     public static final String CLASS_TABLE = "CLASS_TABLE";
     public static final String COLUMN_CLASS_NAME = "CLASS_NAME";
@@ -19,7 +19,7 @@ public class DataBase extends SQLiteOpenHelper {
     public static final String COLUMN_TEACHER_EMAIL = "TEACHER_EMAIL";
     public static final String COLUMN_ID = "ID";
 
-    public DataBase(@Nullable Context context) {
+    public DBClassTable(@Nullable Context context) {
         super(context, "class.db", null, 1);
     }
 

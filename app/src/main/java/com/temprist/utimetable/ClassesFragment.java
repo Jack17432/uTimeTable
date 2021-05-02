@@ -1,12 +1,8 @@
 package com.temprist.utimetable;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,17 +12,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.temprist.utimetable.DataBase.CLASS_TABLE;
-
 public class ClassesFragment extends Fragment {
 
     //References
     ListView listViewClasses;
-    DataBase dataBase;
+    DBClassTable dataBase;
     ArrayAdapter<UserClass> userClassArrayAdapter;
     View view;
 
@@ -44,7 +34,7 @@ public class ClassesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_classes, container, false);
         listViewClasses = view.findViewById(R.id.listViewClasses);
-        dataBase = new DataBase(getActivity().getApplicationContext());
+        dataBase = new DBClassTable(getActivity().getApplicationContext());
 
         refreshList();
 

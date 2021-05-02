@@ -1,9 +1,7 @@
 package com.temprist.utimetable;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,14 +43,14 @@ public class addClass extends AppCompatActivity {
             public void onClick(View v) {
 
                 UserClass userClass;
-                DataBase dataBase = new DataBase(addClass.this);
+                DBClassTable dataBase = new DBClassTable(addClass.this);
 
                 //Try catch to so that app doest crash if unexpected value is entered into UserClass class.
                 try {
                     userClass = new UserClass(-1, editTextNameOfClass.getText().toString(), editTextTeacherName.getText().toString(), editTextTextEmailAddressOfTeacher.getText().toString());
                     boolean debugSuccess = dataBase.addUserClass(userClass);
 
-                    Toast.makeText(addClass.this, userClass.getNameOfClass(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(addClass.this, userClass.getNameOfClass() + " has been added.", Toast.LENGTH_SHORT).show();
 
                     onBackPressed();
                 }
