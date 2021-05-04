@@ -46,8 +46,7 @@ public class DBClassTable extends SQLiteOpenHelper {
 
         long insert = db.insert(CLASS_TABLE, null, cv);
 
-        if (insert == -1) return false;
-        else return true;
+        return insert != -1;
     }
 
     public List<UserClass> getAllClasses(){

@@ -2,46 +2,32 @@ package com.temprist.utimetable;
 
 public class UserAssignment {
 
-    private int id;
-    private String nameOfAssignment;
-    private int progressOfAssignment;
-    private String timeDueOfAssignment;
-    private String dateDueOfAssignment;
-    private String classOfAssignment;
-    private String descriptionOfAssignment;
+    int id;
+    String assignmentName, assignmentDescription;
 
-    //Constructors
+    //One constructor to define all values and one constructor if a UserAssignment is needed without values being set.
 
-    public UserAssignment(int id, String nameOfAssignment, int progressOfAssignment, String timeDueOfAssignment, String dateDueOfAssignment, String classOfAssignment, String descriptionOfAssignment) {
+    public UserAssignment(int id, String assignmentName, String assignmentDescription) {
         this.id = id;
-        this.nameOfAssignment = nameOfAssignment;
-        this.progressOfAssignment = progressOfAssignment;
-        this.timeDueOfAssignment = timeDueOfAssignment;
-        this.dateDueOfAssignment = dateDueOfAssignment;
-        this.classOfAssignment = classOfAssignment;
-        this.descriptionOfAssignment = descriptionOfAssignment;
+        this.assignmentName = assignmentName;
+        this.assignmentDescription = assignmentDescription;
     }
-
     public UserAssignment() {
     }
 
-    //toString
+    //toString used to display all values for debugging and displaying raw data.
 
     @Override
     public String toString() {
         return "UserAssignment{" +
                 "id=" + id +
-                ", nameOfAssignment='" + nameOfAssignment + '\'' +
-                ", progressOfAssignment=" + progressOfAssignment +
-                ", timeDueOfAssignment=" + timeDueOfAssignment +
-                ", dateDueOfAssignment='" + dateDueOfAssignment + '\'' +
-                ", classOfAssignment=" + classOfAssignment +
-                ", descriptionOfAssignment='" + descriptionOfAssignment + '\'' +
+                ", assignmentName='" + assignmentName + '\'' +
+                ", assignmentDescription='" + assignmentDescription + '\'' +
                 '}';
     }
 
 
-    //Getters and setters
+    //Getters and setters for all values in the class.
 
     public int getId() {
         return id;
@@ -51,51 +37,19 @@ public class UserAssignment {
         this.id = id;
     }
 
-    public String getNameOfAssignment() {
-        return nameOfAssignment;
+    public String getAssignmentName() {
+        return assignmentName;
     }
 
-    public void setNameOfAssignment(String nameOfAssignment) {
-        this.nameOfAssignment = nameOfAssignment;
+    public void setAssignmentName(String assignmentName) {
+        this.assignmentName = assignmentName;
     }
 
-    public int getProgressOfAssignment() {
-        return progressOfAssignment;
+    public String getAssignmentDescription() {
+        return assignmentDescription;
     }
 
-    public void setProgressOfAssignment(int progressOfAssignment) {
-        this.progressOfAssignment = progressOfAssignment;
-    }
-
-    public String getTimeDueOfAssignment() {
-        return timeDueOfAssignment;
-    }
-
-    public void setTimeDueOfAssignment(String timeDueOfAssignment) {
-        this.timeDueOfAssignment = timeDueOfAssignment;
-    }
-
-    public String getDateDueOfAssignment() {
-        return dateDueOfAssignment;
-    }
-
-    public void setDateDueOfAssignment(String dateDueOfAssignment) {
-        this.dateDueOfAssignment = dateDueOfAssignment;
-    }
-
-    public String getClassOfAssignment() {
-        return classOfAssignment;
-    }
-
-    public void setClassOfAssignment(String classOfAssignment) {
-        this.classOfAssignment = classOfAssignment;
-    }
-
-    public String getDescriptionOfAssignment() {
-        return descriptionOfAssignment;
-    }
-
-    public void setDescriptionOfAssignment(String descriptionOfAssignment) {
-        this.descriptionOfAssignment = descriptionOfAssignment;
+    public void setAssignmentDescription(String assignmentDescription) {
+        this.assignmentDescription = assignmentDescription;
     }
 }

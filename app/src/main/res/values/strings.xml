@@ -18,4 +18,10 @@
     <string name="inputClass" />
     <string name="addTeacherName">Name of Teacher</string>
     <string name="addTeacherEmail">Add Teacher Email</string>
+    <string name="completion">Completion %</string>
+    <string name="assignmentName">Name of assignment</string>
+    <string name="description">Description</string>
+    <string name="descriptionOfAssignment">Description of assignment</string>
+    <string name="date">Due Date</string>
+    <string name="time">Due time</string>
 </resources>
