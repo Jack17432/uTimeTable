@@ -17,6 +17,7 @@ public class DBAssignmentTable extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_ASSIGNMENT_NAME = "ASSIGNMENT_NAME";
     public static final String COLUMN_ASSIGNMENT_DESCRIPTION = "ASSIGNMENT_DESCRIPTION";
+    public static final String COLUMN_ASSIGNMENT_DATE = "ASSIGNMENT_DATE";
 
     public DBAssignmentTable(@Nullable Context context) {
         super(context, "assignment.db", null, 1);
@@ -25,7 +26,7 @@ public class DBAssignmentTable extends SQLiteOpenHelper {
     //Creates TABLE for assignments, This is currently only supporting NAME of assignment and description But this needs to be expended in the future.
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + ASSIGNMENT_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_ASSIGNMENT_NAME + " TEXT, " + COLUMN_ASSIGNMENT_DESCRIPTION + " TEXT)";
+        String createTableStatement = "CREATE TABLE " + ASSIGNMENT_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_ASSIGNMENT_NAME + " TEXT, " + COLUMN_ASSIGNMENT_DESCRIPTION + " TEXT, " + COLUMN_ASSIGNMENT_DATE + " TEXT)";
         db.execSQL(createTableStatement);
     }
 
@@ -40,6 +41,7 @@ public class DBAssignmentTable extends SQLiteOpenHelper {
 
         cv.put(COLUMN_ASSIGNMENT_NAME, userAssignment.getAssignmentName());
         cv.put(COLUMN_ASSIGNMENT_DESCRIPTION, userAssignment.getAssignmentDescription());
+        cv.put(COLUMN_ASSIGNMENT_DATE, userAssignment.getAssignmentDate());
 
         long insert = db.insert(ASSIGNMENT_TABLE, null, cv);
 
@@ -56,7 +58,7 @@ public class DBAssignmentTable extends SQLiteOpenHelper {
 
     public List<UserAssignment> getAllAssignments(){
         List<UserAssignment> returnList = new ArrayList<>();
-        String queryString = "SELECT * FROM " + ASSIGNMENT_TABLE;
+        String queryString = "SELECT * FROM " + ASSIGNMENT_TABLE + " ORDER BY " + COLUMN_ASSIGNMENT_DATE + " ASC";
         SQLiteDatabase database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(queryString, null);
 
@@ -66,8 +68,9 @@ public class DBAssignmentTable extends SQLiteOpenHelper {
                 int assignmentID = cursor.getInt(0);
                 String assignmentName = cursor.getString(1);
                 String assignmentDescription = cursor.getString(2);
+                String assignmentDate = cursor.getString(3);
 
-                UserAssignment userAssignment = new UserAssignment(assignmentID, assignmentName, assignmentDescription);
+                UserAssignment userAssignment = new UserAssignment(assignmentID, assignmentName, assignmentDescription, assignmentDate);
                 returnList.add(userAssignment);
             }while (cursor.moveToNext());
         }

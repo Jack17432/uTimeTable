@@ -24,4 +24,5 @@
     <string name="descriptionOfAssignment">Description of assignment</string>
     <string name="date">Due Date</string>
     <string name="time">Due time</string>
+    <string name="dueDate">Due date (dd-mm-yyyy)</string>
 </resources>

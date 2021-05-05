@@ -47,7 +47,7 @@ public class addAssignment extends AppCompatActivity {
                 DBAssignmentTable database = new DBAssignmentTable(addAssignment.this);
 
                 try {
-                    userAssignment = new UserAssignment(-1, nameOfAssignment.getText().toString(), descriptionOfAssignment.getText().toString());
+                    userAssignment = new UserAssignment(-1, nameOfAssignment.getText().toString(), descriptionOfAssignment.getText().toString(), dateDueOfAssignment.getText().toString());
 
                     boolean debugSuccess = database.addUserAssignment(userAssignment);
 
