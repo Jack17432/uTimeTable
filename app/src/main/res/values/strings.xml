@@ -9,7 +9,6 @@
     <string name="others">Others</string>
     <string name="userName">(Placeholder)</string>
     <string name="userEmail">Placeholder@Gmail.com</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="addAssignment">Add New Assignment</string>
     <string name="addClass">Add New Class</string>
@@ -25,4 +24,8 @@
     <string name="date">Due Date</string>
     <string name="time">Due time</string>
     <string name="dueDate">Due date (dd-mm-yyyy)</string>
+    <string name="dateClass">1</string>
+    <string name="day">day</string>
+    <string name="leftArrow"><![CDATA[<-]]></string>
+    <string name="rightArrow"><![CDATA[->]]></string>
 </resources>

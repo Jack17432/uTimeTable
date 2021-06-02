@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         //Speed Dial
         {
             SpeedDialView speedDialView = (SpeedDialView) findViewById(R.id.speedDialView);
+
             speedDialView.addActionItem(
                     new SpeedDialActionItem.Builder(R.id.addHolidayFAB, R.drawable.ic_baseline_add_alarm_24)
                             .setFabBackgroundColor(getColor(R.color.Primary))
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             .setLabelClickable(false)
                             .create()
             );
+
             speedDialView.addActionItem(
                     new SpeedDialActionItem.Builder(R.id.addAssignmentFAB, R.drawable.ic_baseline_post_add_24)
                             .setFabBackgroundColor(getColor(R.color.Primary))
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                             .setLabelClickable(false)
                             .create()
             );
+
             speedDialView.addActionItem(
                     new SpeedDialActionItem.Builder(R.id.addClassFAB, R.drawable.ic_baseline_add_to_photos_24)
                             .setFabBackgroundColor(getColor(R.color.Primary))
