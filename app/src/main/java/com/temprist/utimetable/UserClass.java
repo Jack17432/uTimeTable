@@ -2,6 +2,12 @@ package com.temprist.utimetable;
 
 public class UserClass {
 
+    /* TODO
+    * Create a hash map for the day and time for a class to take place.
+    * KEY: INT
+    * VALUE: STRING
+    * */
+
     private int id;
     private String nameOfClass;
     private String nameOfTeacher;

@@ -28,4 +28,11 @@
     <string name="day">day</string>
     <string name="leftArrow"><![CDATA[<-]]></string>
     <string name="rightArrow"><![CDATA[->]]></string>
+    <string name="day_1">Day 1</string>
+    <string name="day_2">Day 2</string>
+    <string name="day_3">Day 3</string>
+    <string name="day_4">Day 4</string>
+    <string name="day_5">Day 5</string>
+    <string name="day_6">Day 6</string>
+    <string name="day_7">Day 7</string>
 </resources>

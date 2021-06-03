@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.chip.Chip;
+
 public class addClass extends AppCompatActivity {
 
     //String
@@ -16,6 +18,7 @@ public class addClass extends AppCompatActivity {
     //Referencing
     Button buttonAddClass;
     EditText editTextNameOfClass, editTextTeacherName, editTextTextEmailAddressOfTeacher;
+    Chip day_1, day_2, day_3, day_4, day_5, day_6, day_7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,15 @@ public class addClass extends AppCompatActivity {
         editTextNameOfClass = findViewById(R.id.editTextNameOfClass);
         editTextTeacherName = findViewById(R.id.editTextTeacherName);
         editTextTextEmailAddressOfTeacher = findViewById(R.id.editTextEmailAddressOfTeacher);
+
+        //all chips id set
+        day_1 = findViewById(R.id.ChipDay1Timetable);
+        day_2 = findViewById(R.id.ChipDay2Timetable);
+        day_3 = findViewById(R.id.ChipDay3Timetable);
+        day_4 = findViewById(R.id.ChipDay4Timetable);
+        day_5 = findViewById(R.id.ChipDay5Timetable);
+        day_6 = findViewById(R.id.ChipDay6Timetable);
+        day_7 = findViewById(R.id.ChipDay7Timetable);
 
         buttonAddClass.setOnClickListener(new View.OnClickListener() {
             @Override

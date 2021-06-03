@@ -77,6 +77,63 @@
         app:layout_constraintStart_toStartOf="@+id/editTextTeacherName"
         app:layout_constraintTop_toBottomOf="@+id/editTextTeacherName" />
 
+    <GridLayout
+        android:id="@+id/gridLayoutDaySelect"
+        android:layout_width="match_parent"
+        android:layout_height="509dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddClass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddressOfTeacher">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay1Timetable"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="@string/day_1" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay2Timetable"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="@string/day_2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay3Timetable"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="@string/day_3" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay4Timetable"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:text="@string/day_4" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay5Timetable"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:text="@string/day_5" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay6Timetable"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:text="@string/day_6" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ChipDay7Timetable"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:text="@string/day_7" />
+
+    </GridLayout>
+
     <Button
         android:id="@+id/buttonAddClass"
         android:layout_width="wrap_content"
@@ -86,5 +143,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <!--
+        Have a radio button to press and if you tick the button it brings up a pannal to set
+        a time for that day.
+
+        int for radio button group
+
+        https://www.youtube.com/watch?v=o-HVE_VxyjQ for time input (It seems cool)
+        if that takes to much time then I will put in a standerd time input so that
+        I can at least hand it in.
+
+        This will be encompassed by a grid layout so that the buttons and time select
+         panel are in line.
+    -->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

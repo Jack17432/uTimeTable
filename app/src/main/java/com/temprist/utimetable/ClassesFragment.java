@@ -53,6 +53,8 @@ public class ClassesFragment extends Fragment {
         return view;
     }
 
+
+
     public void refreshList() {
         userClassArrayAdapter = new ArrayAdapter<UserClass>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, dataBase.getAllClasses());
         listViewClasses.setAdapter(userClassArrayAdapter);
