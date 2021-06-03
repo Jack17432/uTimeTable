@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -18,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/class/baseline_class_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/check_circle/baseline_check_circle_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="color" value="bb86fc" />
                             <entry key="opacityPercent" value="80" />
-                            <entry key="outputName" value="ic_baseline_class_24" />
+                            <entry key="outputName" value="ic_baseline_check_circle_24_purple_200" />
                             <entry key="sourceFile" value="C:\Users\Jack1\OneDrive\Documents\School\IB\HL compsci\IA\uTimeTable" />
                           </map>
                         </option>

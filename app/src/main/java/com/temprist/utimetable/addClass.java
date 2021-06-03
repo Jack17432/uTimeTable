@@ -1,6 +1,7 @@
 package com.temprist.utimetable;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ public class addClass extends AppCompatActivity {
     Button buttonAddClass;
     EditText editTextNameOfClass, editTextTeacherName, editTextTextEmailAddressOfTeacher;
     Chip day_1, day_2, day_3, day_4, day_5, day_6, day_7;
+    CardView day_1_card, day_2_card, day_3_card, day_4_card, day_5_card, day_6_card, day_7_card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
