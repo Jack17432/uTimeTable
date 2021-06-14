@@ -66,14 +66,6 @@ public class MainActivity extends AppCompatActivity {
             SpeedDialView speedDialView = (SpeedDialView) findViewById(R.id.speedDialView);
 
             speedDialView.addActionItem(
-                    new SpeedDialActionItem.Builder(R.id.addHolidayFAB, R.drawable.ic_baseline_add_alarm_24)
-                            .setFabBackgroundColor(getColor(R.color.Primary))
-                            .setLabel(getString(R.string.addHoliday))
-                            .setLabelClickable(false)
-                            .create()
-            );
-
-            speedDialView.addActionItem(
                     new SpeedDialActionItem.Builder(R.id.addAssignmentFAB, R.drawable.ic_baseline_post_add_24)
                             .setFabBackgroundColor(getColor(R.color.Primary))
                             .setLabel(getString(R.string.addAssignment))
@@ -98,10 +90,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (speedDialActionItem.getId() == R.id.addAssignmentFAB) {
                         startActivity(new Intent(MainActivity.this, addAssignment.class));
-                        return false;
-                    }
-                    else if (speedDialActionItem.getId() == R.id.addHolidayFAB) {
-                        startActivity(new Intent(MainActivity.this, addHoliday.class));
                         return false;
                     }
                     return false;
