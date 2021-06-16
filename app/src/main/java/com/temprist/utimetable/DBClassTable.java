@@ -18,6 +18,13 @@ public class DBClassTable extends SQLiteOpenHelper {
     public static final String COLUMN_TEACHER_NAME = "TEACHER_NAME";
     public static final String COLUMN_TEACHER_EMAIL = "TEACHER_EMAIL";
     public static final String COLUMN_ID = "ID";
+    public static final String COLUMN_DAY_1 = "DAY_1";
+    public static final String COLUMN_DAY_2 = "DAY_2";
+    public static final String COLUMN_DAY_3 = "DAY_3";
+    public static final String COLUMN_DAY_4 = "DAY_4";
+    public static final String COLUMN_DAY_5 = "DAY_5";
+    public static final String COLUMN_DAY_6 = "DAY_6";
+    public static final String COLUMN_DAY_7 = "DAY_7";
 
     public DBClassTable(@Nullable Context context) {
         super(context, "class.db", null, 1);
@@ -25,7 +32,18 @@ public class DBClassTable extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + CLASS_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CLASS_NAME + " TEXT, " + COLUMN_TEACHER_NAME + " TEXT, " + COLUMN_TEACHER_EMAIL + " TEXT)";
+        String createTableStatement = "CREATE TABLE " + CLASS_TABLE + " (" +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_CLASS_NAME + " TEXT, " +
+                COLUMN_TEACHER_NAME + " TEXT, " +
+                COLUMN_TEACHER_EMAIL + " TEXT, " +
+                COLUMN_DAY_1 + " TEXT, " +
+                COLUMN_DAY_2 + " TEXT, " +
+                COLUMN_DAY_3 + " TEXT, " +
+                COLUMN_DAY_4 + " TEXT, " +
+                COLUMN_DAY_5 + " TEXT, " +
+                COLUMN_DAY_6 + " TEXT, " +
+                COLUMN_DAY_7 + " TEXT)";
 
         db.execSQL(createTableStatement);
     }
