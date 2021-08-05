@@ -28,7 +28,9 @@ public class addClass extends AppCompatActivity {
     EditText editTextNameOfClass, editTextTeacherName, editTextTextEmailAddressOfTeacher;
     Chip day_1, day_2, day_3, day_4, day_5, day_6, day_7;
     TextView d1Start, d1End, d2Start, d2End, d3Start, d3End, d4Start, d4End, d5Start, d5End, d6Start, d6End, d7Start, d7End;
-    int t1Hour, t1Minute, t2Hour, t2Minute;
+    int t1Hour, t1Minute;
+    int day1IsChecked, day2IsChecked, day3IsChecked, day4IsChecked, day5IsChecked, day6IsChecked, day7IsChecked;
+    String day1Time, day2Time, day3Time, day4Time, day5Time, day6Time, day7Time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -373,7 +375,32 @@ public class addClass extends AppCompatActivity {
 
                 //Try catch to so that app doest crash if unexpected value is entered into UserClass class.
                 try {
-                    userClass = new UserClass(-1, editTextNameOfClass.getText().toString(), editTextTeacherName.getText().toString(), editTextTextEmailAddressOfTeacher.getText().toString());
+                    if (day_1.isChecked()) {day1IsChecked = 1;}
+                    else {day1IsChecked = 0;}
+                    if (day_2.isChecked()) {day2IsChecked = 1;}
+                    else {day2IsChecked = 0;}
+                    if (day_3.isChecked()) {day3IsChecked = 1;}
+                    else {day3IsChecked = 0;}
+                    if (day_4.isChecked()) {day4IsChecked = 1;}
+                    else {day4IsChecked = 0;}
+                    if (day_5.isChecked()) {day5IsChecked = 1;}
+                    else {day5IsChecked = 0;}
+                    if (day_6.isChecked()) {day6IsChecked = 1;}
+                    else {day6IsChecked = 0;}
+                    if (day_7.isChecked()) {day7IsChecked = 1;}
+                    else {day7IsChecked = 0;}
+
+                    day1Time = d1Start.getText().toString() + " to " + d1End.getText().toString();
+                    day2Time = d2Start.getText().toString() + " to " + d2End.getText().toString();
+                    day3Time = d3Start.getText().toString() + " to " + d3End.getText().toString();
+                    day4Time = d4Start.getText().toString() + " to " + d4End.getText().toString();
+                    day5Time = d5Start.getText().toString() + " to " + d5End.getText().toString();
+                    day6Time = d6Start.getText().toString() + " to " + d6End.getText().toString();
+                    day7Time = d7Start.getText().toString() + " to " + d7End.getText().toString();
+
+                    userClass = new UserClass(-1, editTextNameOfClass.getText().toString(), editTextTeacherName.getText().toString(),
+                            editTextTextEmailAddressOfTeacher.getText().toString(), day1IsChecked, day2IsChecked, day3IsChecked, day4IsChecked,
+                            day5IsChecked, day6IsChecked, day7IsChecked, day1Time, day2Time, day3Time, day4Time, day5Time, day6Time, day7Time);
                     boolean debugSuccess = dataBase.addUserClass(userClass);
 
                     Toast.makeText(addClass.this, userClass.getNameOfClass() + " has been added.", Toast.LENGTH_SHORT).show();

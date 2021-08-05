@@ -23,11 +23,10 @@ public class addAssignment extends AppCompatActivity {
 
         //Definition
         addAssignment = findViewById(R.id.buttonAddAssignment);
-        nameOfAssignment = findViewById(R.id.editTextNameOfAssignment); //USE THIS ONE
+        nameOfAssignment = findViewById(R.id.editTextNameOfAssignment);
         timeDueOfAssignment = findViewById(R.id.editTextTimeDueOfAssignment);
         dateDueOfAssignment = findViewById(R.id.editTextDateDueOfAssignment);
-        descriptionOfAssignment = findViewById(R.id.editTextDescription); //USE THIS ONE
-        completionOfAssignment = findViewById(R.id.seekBarCompletion);
+        descriptionOfAssignment = findViewById(R.id.editTextDescription);
 
         //Back Arrow
         {
@@ -47,9 +46,8 @@ public class addAssignment extends AppCompatActivity {
                 DBAssignmentTable database = new DBAssignmentTable(addAssignment.this);
 
                 try {
-                    userAssignment = new UserAssignment(-1, nameOfAssignment.getText().toString(), descriptionOfAssignment.getText().toString(), dateDueOfAssignment.getText().toString());
-
-                    boolean debugSuccess = database.addUserAssignment(userAssignment);
+                    userAssignment = new UserAssignment(-1, nameOfAssignment.getText().toString(), descriptionOfAssignment.getText().toString(), dateDueOfAssignment.getText().toString(), timeDueOfAssignment.getText().toString());
+                    database.addUserAssignment(userAssignment);
 
                     Toast.makeText(addAssignment.this, userAssignment.getAssignmentName() + " assignment has been added.", Toast.LENGTH_SHORT).show();
                     onBackPressed();

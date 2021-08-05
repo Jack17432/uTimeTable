@@ -12,11 +12,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AssignmentFragment extends Fragment {
 
     ListView listViewAssignments;
     DBAssignmentTable database;
-    ArrayAdapter<UserAssignment> userAssignmentArrayAdapter;
+    ArrayAdapter<String> userAssignmentArrayAdapter;
 
     public AssignmentFragment() {
 
@@ -39,12 +42,14 @@ public class AssignmentFragment extends Fragment {
         listViewAssignments.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UserAssignment userAssignment = (UserAssignment) parent.getItemAtPosition(position);
-                boolean isClassDeleted = database.deleteUserAssignment(userAssignment);
+                String userAssignment = (String) parent.getItemAtPosition(position);
+                String IDString = userAssignment.substring(userAssignment.indexOf("(") + 1, userAssignment.indexOf(")"));
+                Integer ID = Integer.parseInt(IDString);
+                boolean isClassDeleted = database.deleteUserAssignment(ID);
 
                 refreshList();
-                if (isClassDeleted) Toast.makeText(getActivity(), userAssignment.getAssignmentName() + " has been deleted.", Toast.LENGTH_SHORT).show();
-                else Toast.makeText(getActivity(), userAssignment.getAssignmentName() + " has failed to deleted.", Toast.LENGTH_SHORT).show();
+                if (isClassDeleted) Toast.makeText(getActivity(), "Assignment has been deleted.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getActivity(),  "Assignment has failed to deleted.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -52,7 +57,20 @@ public class AssignmentFragment extends Fragment {
     }
 
     public void refreshList(){
-        userAssignmentArrayAdapter = new ArrayAdapter<UserAssignment>(getActivity(), android.R.layout.simple_list_item_1, database.getAllAssignments());
+        List<UserAssignment> listOfAllAssignments = database.getAllAssignments();
+        List<String> listOfAllAssignmentsFormat = new ArrayList<>();
+
+        for(int i = 0; i < listOfAllAssignments.size(); i++){
+            UserAssignment currAssi = listOfAllAssignments.get(i);
+            listOfAllAssignmentsFormat.add("ID: (" + currAssi.getId() +
+                    ")\nName: " + currAssi.getAssignmentName() +
+                    "\nDue Time: " + currAssi.getAssignmentTime() +
+                    "\nDue Date: " + currAssi.getAssignmentDate() +
+                    "\nDescription: " + currAssi.getAssignmentDescription()
+            );
+        }
+
+        userAssignmentArrayAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, listOfAllAssignmentsFormat);
         listViewAssignments.setAdapter(userAssignmentArrayAdapter);
     }
 }

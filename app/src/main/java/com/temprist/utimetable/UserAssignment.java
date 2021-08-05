@@ -3,18 +3,16 @@ package com.temprist.utimetable;
 public class UserAssignment {
 
     int id;
-    String assignmentName, assignmentDescription, assignmentDate;
+    String assignmentName, assignmentDescription, assignmentDate, assignmentTime;
 
     //One constructor to define all values and one constructor if a UserAssignment is needed without values being set.
 
-    public UserAssignment(int id, String assignmentName, String assignmentDescription, String assignmentDate) {
+    public UserAssignment(int id, String assignmentName, String assignmentDescription, String assignmentDate, String assignmentTime) {
         this.id = id;
         this.assignmentName = assignmentName;
         this.assignmentDescription = assignmentDescription;
         this.assignmentDate = assignmentDate;
-
-    }
-    public UserAssignment() {
+        this.assignmentTime = assignmentTime;
     }
 
     //toString used to display all values for debugging and displaying raw data.
@@ -26,11 +24,13 @@ public class UserAssignment {
                 ", assignmentName='" + assignmentName + '\'' +
                 ", assignmentDescription='" + assignmentDescription + '\'' +
                 ", assignmentDate='" + assignmentDate + '\'' +
+                ", assignmentTime='" + assignmentTime + '\'' +
                 '}';
     }
 
 
     //Getters and setters for all values in the class.
+
 
     public int getId() {
         return id;
@@ -62,5 +62,13 @@ public class UserAssignment {
 
     public void setAssignmentDate(String assignmentDate) {
         this.assignmentDate = assignmentDate;
+    }
+
+    public String getAssignmentTime() {
+        return assignmentTime;
+    }
+
+    public void setAssignmentTime(String assignmentTime) {
+        this.assignmentTime = assignmentTime;
     }
 }
